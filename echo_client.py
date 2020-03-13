@@ -21,15 +21,17 @@ def client(msg, log_buffer=sys.stderr):
         # when we are finished with it
         try:
             print('sending "{0}"'.format(msg), file=log_buffer)
-
             client_socket.sendall(msg.encode("utf-8"))
+
             while True:
                 chunk = client_socket.recv(16)
                 received_message = received_message + chunk.decode("utf8")
-                print('received "{0}"'.format(chunk.decode('utf8')), file=log_buffer)
+                print('received "{0}"'.format(chunk.decode('utf8')),
+                      file=log_buffer)
 
                 if len(chunk) < 16:
                     break
+
         except Exception as e:
             traceback.print_exc()
             sys.exit(1)
