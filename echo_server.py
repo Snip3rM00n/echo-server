@@ -1,7 +1,6 @@
 import socket
 import sys
 import traceback
-import select
 
 
 def server(log_buffer=sys.stderr):
