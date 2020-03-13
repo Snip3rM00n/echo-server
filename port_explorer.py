@@ -3,7 +3,7 @@ import socket
 
 PARSER = argparse.ArgumentParser(description="Find the services bound to a range of ports.")
 PARSER.add_argument("--start", type=int, default=0, help="The start of the range to search")
-PARSER.add_argument("--end", type=int, default=1500, help="The end of the range to search")
+PARSER.add_argument("--end", type=int, default=1023, help="The end of the range to search")
 
 
 def read_ports(start, end):
